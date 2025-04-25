@@ -22,7 +22,6 @@ li {
   /* min-height: 75vh; */
   margin-top: 80 !important;
   min-height: 100vh;
-
 }
 
 .pt-70 {
@@ -140,10 +139,12 @@ code {
 }
 
 .btn-login-form {
-  background-image: linear-gradient(to right,
-      #0072ff 0%,
-      #00c3ff 51%,
-      #0072ff 100%);
+  background-image: linear-gradient(
+    to right,
+    #0072ff 0%,
+    #00c3ff 51%,
+    #0072ff 100%
+  );
 }
 
 .btn-login-form,
@@ -171,17 +172,21 @@ code {
 }
 
 .btn-register-form {
-  background-image: linear-gradient(to right,
-      #ee0979 0%,
-      #ff6a00 51%,
-      #ee0979 100%);
+  background-image: linear-gradient(
+    to right,
+    #ee0979 0%,
+    #ff6a00 51%,
+    #ee0979 100%
+  );
 }
 
 .btn-logout {
-  background-image: linear-gradient(to right,
-      #02aab0 0%,
-      #00cdac 51%,
-      #02aab0 100%);
+  background-image: linear-gradient(
+    to right,
+    #02aab0 0%,
+    #00cdac 51%,
+    #02aab0 100%
+  );
 }
 
 .btn-add-tocart {
@@ -277,15 +282,15 @@ code {
   max-height: 10vh;
 }
 
-.multi-steps>li.is-active~li:before,
-.multi-steps>li.is-active:before {
+.multi-steps > li.is-active ~ li:before,
+.multi-steps > li.is-active:before {
   content: counter(stepNum);
   font-family: inherit;
   font-weight: 700;
 }
 
-.multi-steps>li.is-active~li:after,
-.multi-steps>li.is-active:after {
+.multi-steps > li.is-active ~ li:after,
+.multi-steps > li.is-active:after {
   background-color: #ededed;
 }
 
@@ -295,7 +300,7 @@ code {
   width: 100%;
 }
 
-.multi-steps>li {
+.multi-steps > li {
   counter-increment: stepNum;
   text-align: center;
   display: table-cell;
@@ -303,7 +308,7 @@ code {
   color: #ff6a00;
 }
 
-.multi-steps>li:before {
+.multi-steps > li:before {
   content: "";
   content: "✓";
   content: "𐀃";
@@ -323,7 +328,7 @@ code {
   border-radius: 50%;
 }
 
-.multi-steps>li:after {
+.multi-steps > li:after {
   content: "";
   height: 2px;
   width: 100%;
@@ -334,20 +339,20 @@ code {
   z-index: -1;
 }
 
-.multi-steps>li:last-child:after {
+.multi-steps > li:last-child:after {
   display: none;
 }
 
-.multi-steps>li.is-active:before {
+.multi-steps > li.is-active:before {
   background-color: #fff;
   border-color: #ff6a00;
 }
 
-.multi-steps>li.is-active~li {
+.multi-steps > li.is-active ~ li {
   color: #808080;
 }
 
-.multi-steps>li.is-active~li:before {
+.multi-steps > li.is-active ~ li:before {
   background-color: #ededed;
   border-color: #ededed;
 }

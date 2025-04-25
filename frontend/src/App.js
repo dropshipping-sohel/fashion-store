@@ -15,8 +15,7 @@ import PaymentGatway from './pages/PaymentGatway';
 import CustomerOrders from './pages/CustomerOrders';
 import TrackOrder from './pages/TrackOrder';
 import Search from './pages/Search';
-import AdminRoute from './pages/admin/AdminRoute';
-import AdminNav from './components/AdminNav';
+
 import Dashboard from './pages/admin/Dashboard';
 import Orders from './pages/admin/Orders';
 import Manage from './pages/admin/Manage';
@@ -45,11 +44,7 @@ function App() {
       <Router>
         <CartContext.Provider value={{ cart, setCart, user, setUser, }}>
           <Navbar />
-          {
-            user ? (
-              user.role === "admin" ? <AdminNav /> : ""
-            ) : ""
-          }
+
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/product/:_id" component={SingleProduct} />

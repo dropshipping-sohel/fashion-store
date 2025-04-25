@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const AdminNav = () => {
     return (
         <div className="admin-nav py-2 p-3">
-            <ul className="container my-0 d-flex align-items-center justify-content-evenly" id="ad-nav">
+            <ul className="my-0 d-flex align-items-center justify-content-evenly" id="ad-nav">
                 <li>
                     <Link to="/admin/dashboard">Dashboard</Link>
                 </li>

@@ -41,7 +41,9 @@ const Add = () => {
             method: "POST",
             body: formData
         })
-        const data = res.json();
+        const data = await res.json();
+        console.log(data);
+
 
         if (res.status === 400 || !data || res.status === 422) {
             console.log(data)
@@ -88,8 +90,8 @@ const Add = () => {
                             <option value="mens">Mens</option>
                             <option value="womens">Womens</option>
                             <option value="kids">Kids</option>
-                            <option value="living">Home&Living</option>
-                            <option value="sports">Sports</option>
+                            {/* <option value="living">Home&Living</option>
+                            <option value="sports">Sports</option> */}
                         </select>
                     </div>
                     <div className="col-md-3">

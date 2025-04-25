@@ -31,7 +31,9 @@ function manageController() {
             console.log(req.file.path)
 
             console.log(req.body);
-            product.save().then(() => {
+            product.save().then((data) => {
+                console.log({ data });
+
                 return res.status(200).json({ success: "Data Saved!!" })
             }).catch(err => {
                 console.log(err)

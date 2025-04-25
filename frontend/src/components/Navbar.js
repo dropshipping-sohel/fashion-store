@@ -5,6 +5,7 @@ import { BiCart } from "react-icons/bi";
 import { FaSearch } from "react-icons/fa";
 import { CartContext } from '../CartContext'
 import { useHistory } from 'react-router-dom'
+import AdminNav from './AdminNav';
 
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
     return (
 
         <div>
-            <header className="p-3 bg-light fixed-top text-dark shadow-b-sm" id="navbar" >
+            <header className="p-3 bg-light  text-dark shadow-b-sm" id="navbar" >
                 <div className="px-4">
                     <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                         <Link to="/" className="navbar-brand text-dark fw-bold display-5 d-flex align-items-center justify-content-center" href="#">
@@ -31,8 +32,7 @@ const Navbar = () => {
                             <li><Link to="/category/mens" className="nav-link px-2 text-dark">Men</Link></li>
                             <li><Link to="/category/womens" className="nav-link px-2 text-dark">Women</Link></li>
                             <li><Link to="/category/kids" className="nav-link px-2 text-dark">Kids</Link></li>
-                            <li><Link to="/category/home&living" className="nav-link px-2 text-dark">Home&Living</Link></li>
-                            <li><Link to="/category/sports " className="nav-link px-2 text-dark">Sports</Link></li>
+
                         </ul>
 
                         <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 search-field" onSubmit={searchProduct}>
@@ -56,7 +56,15 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Admin Navbar */}
+                {
+                    user ? (
+                        user.role === "admin" ? <AdminNav /> : null
+                    ) : ""
+                }
             </header>
+
         </div >
 
     )

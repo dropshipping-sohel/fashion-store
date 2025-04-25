@@ -11,23 +11,13 @@ const cors = require('cors')
 
 app.use(cors())
 
-const allowedOrigins = ['https://fashion-store-drab.vercel.app'];
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 const PORT = process.env.PORT || 4000
 
 //Database connection
-const url = 'mongodb+srv://ayushbulbule24:bjPnVgQ9rXv9OU1d@cluster0.k4iudhn.mongodb.net/?retryWrites=true&w=majority'
+const url = 'mongodb+srv://dropshippingsohel:sN8eLfkXeUAPNksg@cluster0.iglhndk.mongodb.net/fashion_store?retryWrites=true&w=majority'
+// const url = 'mongodb+srv://ayushbulbule24:bjPnVgQ9rXv9OU1d@cluster0.k4iudhn.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -40,6 +30,9 @@ connection.once('open', () => {
 }).catch(err => {
     console.log("Connection Failed")
 })
+
+// FrontEnd
+app.use(express.static("build"));
 
 //Assets
 app.use(express.static('uploads'))
