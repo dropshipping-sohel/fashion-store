@@ -24,9 +24,9 @@ const Profile = () => {
                         </div>
                         <div className="col-md-6 col-12 py-2 p-4">
                             <h4>Your Profile</h4>
-                            <p><b>Name: </b>{user.name} </p>
-                            <p><b>Email: </b>{user.email} </p>
-                            <p><b>Address: </b>{user.address} </p>
+                            <p><b>Name: </b>{user?.name} </p>
+                            <p><b>Email: </b>{user?.email} </p>
+                            <p><b>Address: </b>{user?.address} </p>
                             <div className="d-flex justify-content-between align-items-center">
                                 <button onClick={logOut} className="my-4 btn-logout">Logout</button>
                                 <Link className="my-4 btn-ordr" to="/orders">My Orders</Link>
