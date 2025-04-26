@@ -16,7 +16,7 @@ const Manage = () => {
     })
 
     const getProducts = async () => {
-        const response = await fetch(`${process.env.REACT_APP_API_KEY}/api`, {
+        const response = await fetch(`/api`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -150,7 +150,7 @@ const Manage = () => {
                         {products ?
                             products.map(product => <tr>
                                 <td class="border px-4 py-2 text-left">
-                                    <img src={`http://localhost:4000/${product.image}`} class="table-image" alt="Product" />
+                                    <img src={`${product.image}`} class="table-image" alt="Product" />
                                     <h6>
                                         {product.name}
                                     </h6>
@@ -162,7 +162,7 @@ const Manage = () => {
                                     {product.category}
                                 </td>
                                 <td class="border px-4 py-2 text-center">
-                                    ${product.price}
+                                    ৳{product.price}
                                 </td>
                                 <td class="border px-4 py-2 text-center">
                                     {product.rating}

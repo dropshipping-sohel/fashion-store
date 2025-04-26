@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
 
             <div className="card product-card h-100">
                 <div className="product-img-box d-flex align-items-center justify-content-center" style={{ height: 210 + "px" }} >
-                    <img src={`${process.env.REACT_APP_API_KEY}/${product.image}`} className="product-img img-fluid" alt="ProductImage" style={{ height: 180 + "px" }} />
+                    <img src={product.image} className="product-img img-fluid" alt="ProductImage" style={{ height: 180 + "px" }} />
                 </div>
                 <div className="card-body product-info">
                     <h3 className="card-title">
@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
                 </div>
                 <div
                     className="pb-2 px-3 d-flex align-items-center flex-shrink-1 justify-content-between">
-                    <h5>$ 49
+                    <h5>৳ {product.price}
                     </h5>
                     <button data-product="<%= JSON.stringify(product)%>"
                         className="btn-add-cart"><MdAddShoppingCart /></button>

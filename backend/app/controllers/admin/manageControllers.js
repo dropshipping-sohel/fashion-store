@@ -20,7 +20,7 @@ function manageController() {
 
             const product = new Product({
                 name: name,
-                image: req.file.filename,
+                image: req.file.path,
                 description: description,
                 category: category,
                 price: price,
@@ -65,7 +65,7 @@ function manageController() {
             } else {
                 product = {
                     name: name,
-                    image: req.file.filename,
+                    image: req.file.path,
                     description: description,
                     category: category,
                     price: price,
@@ -84,7 +84,6 @@ function manageController() {
             } else {
                 return res.status(200).json({ error: "Data Updated Failed!!" })
             }
-            return res.status(200).json({ error: "Data Updated Failed!!" })
         },
         async deleteProduct(req, res) {
             let id = req.body.productId;

@@ -14,7 +14,7 @@ const Dashboard = () => {
 
     const getStats = async () => {
         console.log(filter)
-        const res = await fetch(`${process.env.REACT_APP_API_KEY}/admin/stats`, {
+        const res = await fetch(`/admin/stats`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -104,7 +104,7 @@ const Dashboard = () => {
                             (filter === "" || filter === "stock") ?
                                 products ? products.map(product => <tr key={product._id}>
                                     <td className="border px-4 py-2 text-left">
-                                        <img src={`http://localhost:4000/${product.image}`} style={{ width: "4rem", maxHeight: "6rem" }}
+                                        <img src={`${product.image}`} style={{ width: "4rem", maxHeight: "6rem" }}
                                             alt="Product" />
 
                                     </td>
